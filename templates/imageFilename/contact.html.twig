@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Page D'accueil
+{% endblock %}
+
+
+{% block body %}
+
+	<section class="upload">
+		<div class="container">
+			<div class="divUpload">
+				<div class="uploadTitle">Ajout de contenu
+				</div>
+				<div class="formUpload">
+					{{ form_start(formUpload) }}
+					<div class="row">
+						<div class="uploadInput">
+							{{ form_row(formUpload.ImageFilename) }}
+						</div>
+						<div class="uploadInput">
+							{{ form_row(formUpload.Description) }}
+						</div>
+						<div class="uploadInput">
+							{{ form_row(formUpload.Title) }}
+						</div>
+					</div>
+					<button class="uploadButton">Ajouter</button>
+					{{ form_end(formUpload) }}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+
+{% endblock %}
+{% block javascript %}{% endblock %}

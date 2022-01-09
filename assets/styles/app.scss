@@ -1,0 +1,430 @@
+* {
+  font-family: "SpotCookieRegular";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 110%;
+}
+
+body {
+  background: url(https://s1.1zoom.me/big0/453/Texture_White_549233_1280x854.jpg);
+  background-image: linear-gradient(100deg, #fac3cf69 45%, #f8f7f86b 50%);
+  background-repeat: round;
+  margin: 0;
+}
+
+.transition {
+  border-radius: 95% 95% 95% 95% / 50%;
+  padding-top: 5rem;
+  margin-left: 5rem;
+  background-size: 100%;
+  width: 90%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 1.5;
+  padding-bottom: 4rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 100px 400px -50px,
+    rgba(0, 0, 0, 0.3) 0px 100px 200px -60px,
+    rgba(10, 37, 64, 0.35) 0px -2px 50px 12px inset;
+  background-image: url(https://www.siteduchien.com/images/chien/fonds/fond-ecran-hd-chiot-golden-retriever.jpg);
+  .grid-container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+    .grid {
+      display: flex;
+      flex-direction: row;
+      gap: 7rem;
+      justify-content: center;
+      .gridImg {
+        width: 15rem;
+        height: 12rem;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        img {
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px,
+            rgb(0, 0, 0) 0px 0px 0px 3px;
+        }
+        &:nth-child(even) {
+          top: 4rem;
+        }
+        & img:hover {
+          width: 15rem;
+          height: 12rem;
+          height: auto;
+          transition: 0.3s ease-in-out;
+          transform: scale(1.2);
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px,
+            rgb(0, 0, 0) 0px 0px 0px 3px;
+        }
+      }
+    }
+  }
+}
+
+.delete {
+  width: 50rem;
+  margin-bottom: 1.5rem;
+  .buttonDelete {
+    background-color: #e54949;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.Upload {
+  transform: rotate(-2deg);
+  right: 5rem;
+  margin-bottom: 5rem;
+  &:nth-child(even) {
+    position: relative;
+    left: 8rem;
+    transform: rotate(2deg);
+  }
+  .newContent {
+    margin-top: 3rem;
+    display: contents;
+    justify-content: center;
+    .firstPartContent {
+      display: flex;
+      width: 50rem;
+      height: 20rem;
+      height: auto;
+      flex-direction: column;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+        rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      .imgContent {
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+          rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        width: 100%;
+        height: 12rem;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        flex-direction: column-reverse;
+        border-radius: 20%;
+        img {
+          width: 100%;
+          height: 20rem;
+          border-radius: 15px;
+          &:hover {
+            transform: scale(1.05) rotate(3deg);
+            transition: 300ms ease-in-out;
+            &:hover ~ .titleContent {
+              transform: scale(1.1) rotate(3deg);
+              transition: 300ms ease-in-out;
+            }
+          }
+        }
+      }
+      .titleContent {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+          rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        background: url(https://previews.123rf.com/images/tomo00/tomo001803/tomo00180300204/98041879-fond-d-%C3%A9cran-de-fond-ray%C3%A9-rayures-bordures-cadre-photo-cadre-photo-espace-copie-changements-de-titre.jpg);
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        border-radius: 50%;
+        width: 50%;
+        margin-left: 12rem;
+        z-index: 2;
+        position: relative;
+        top: 4rem;
+        border: 2px solid black;
+        h1 {
+          margin: 1rem;
+        }
+      }
+    }
+    .secondPartContent {
+      width: 50rem;
+      display: flex;
+      justify-content: center;
+      background-color: white;
+      height: auto;
+      position: relative;
+      z-index: 2;
+      margin-top: 6rem;
+      border: 2px solid black;
+      background: url(https://img.besthqwallpapers.com/Uploads/5-5-2020/131988/crumpled-paper-texture-white-crumpled-paper-background-paper-texture-white-paper-crumpled-paper.jpg);
+      background-size: cover;
+    }
+  }
+} 
+
+
+header {
+  background: url("/public/build/images/fondCanin.jpg");
+  width: 100%;
+  height: 20rem;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 85% 85% / 50%;
+  .overlay {
+    height: 100%;
+    padding: 50px;
+    color: #fff;
+    background-image: linear-gradient(100deg, #fc406969 45%, #fa79fa6b 50%);
+    text-shadow: 1px 1px 1px #333;
+  }
+  .buttonLogin {
+    bottom: 2rem;
+    position: relative;
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+    .connexion {
+      background: url(https://logodix.com/logo/1633476.png);
+      background-size: cover;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+      justify-content: flex-end;
+      &:hover {
+        box-shadow: rgba(255, 255, 255, 0.4) -5px 5px,
+          rgba(255, 235, 248, 0.3) -10px 10px,
+          rgba(250, 194, 229, 0.2) -15px 15px,
+          rgba(248, 150, 212, 0.1) -20px 20px,
+          rgba(253, 112, 202, 0.05) -25px 25px;
+      }
+    }
+  }
+  .buttonLogout {
+    bottom: 2rem;
+    position: relative;
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+    .deconnexion {
+      background: url(https://us.123rf.com/450wm/vectora/vectora1503/vectora150300219/37293750-vector-illustration-de-la-croix-rouge-rouge-ic%C3%B4ne-x-le-bouton-fermer-incorrecte-cesser-de-fumer-.jpg?ver=6);
+      background-size: cover;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+      justify-content: flex-end;
+      &:hover {
+        box-shadow: rgba(255, 255, 255, 0.4) -5px 5px,
+          rgba(255, 235, 248, 0.3) -10px 10px,
+          rgba(250, 194, 229, 0.2) -15px 15px,
+          rgba(248, 150, 212, 0.1) -20px 20px,
+          rgba(253, 112, 202, 0.05) -25px 25px;
+      }
+    }
+    .redirectToUpload {
+      background: url(data:image/png;base64,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);
+      background-size: cover;
+      margin-left: 2rem;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+      justify-content: flex-end;
+      &:hover {
+        box-shadow: rgba(255, 255, 255, 0.4) -5px 5px,
+          rgba(255, 235, 248, 0.3) -10px 10px,
+          rgba(250, 194, 229, 0.2) -15px 15px,
+          rgba(248, 150, 212, 0.1) -20px 20px,
+          rgba(253, 112, 202, 0.05) -25px 25px;
+      }
+    }
+  }
+}
+
+.intro {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .text-intro {
+    font-size: 1.7rem;
+    font-style: italic;
+    padding: 3rem;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  .description {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+      font-size: 50px;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      text-decoration: underline;
+    }
+    .white {
+      background: url(https://s1.1zoom.me/big0/453/Texture_White_549233_1280x854.jpg);
+      background-size: contain;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      margin-left: 3rem;
+      border-radius: 10%;
+      p {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+      }
+      & #ancre {
+        text-decoration: none;
+      }
+      .buttonBn3 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+        .bn3 {
+          text-decoration: none;
+          display: flex;
+          width: 9rem;
+          justify-content: center;
+          height: 2rem;
+          margin: 0 0.1em 0.1em 0;
+          border: 0.16em solid rgb(255, 255, 255);
+          border-radius: 2em;
+          box-sizing: border-box;
+          text-decoration: none;
+          font-size: 1.5rem;
+          color: #000000;
+          text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+          text-align: center;
+          transition: all 0.2s;
+          border: 1px solid #000000;
+          background-image: linear-gradient(to right, #f0f5f7 0%, #afb3b1 100%);
+        }
+        .bn3:hover {
+          color: rgb(0, 0, 0);
+          font-weight: bold;
+          background-size: contain;
+          background-repeat: round;
+          text-shadow: 0px 0px 3px white;
+          border: 2px solid rgb(0, 0, 0);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  #target {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, 0.7);
+    transition: all 0.4s;
+    &:target {
+      visibility: visible;
+      opacity: 1;
+      .modalClose {
+        display: flex;
+        justify-content: flex-end;
+        color: #ffffff;
+        text-decoration: none;
+        &:target-within {
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
+    }
+  }
+  .transition2 {
+    margin-left: 4rem;
+    margin-top: 2rem;
+    border-radius: 85% 0 0 85% / 50%;
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    & iframe {
+      width: 24rem;
+      height: 13rem;
+    }
+    & .video {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 23rem;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(0, 0, 0) 0px 0px 0px 3px;
+    }
+  }
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  .required {
+    padding: 0.4rem;
+  }
+  .feedback-input {
+    color: rgb(255, 255, 255);
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    transition: all 0.3s;
+    padding: 13px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: 0;
+  }
+  .feedback-input-send {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    transition: all 0.3s;
+    padding: 13px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: 0;
+    &:hover {
+      background: #cc4949;
+    }
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}

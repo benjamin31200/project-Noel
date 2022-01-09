@@ -1,0 +1,142 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Page D'accueil
+{% endblock %}
+
+
+{% block body %}
+	<header>
+		<div class="overlay">	
+			{% if app.user %}
+				<div class="buttonLogout">
+					<a href="{{ path('app_logout') }}"><button class="deconnexion"></button></a>
+					<a href="/Upload"><button class="redirectToUpload"></button></a>
+				</div>
+				{% else %}
+				<div class="buttonLogin">
+					<a href="/login"><button class="connexion"></button></a>
+				</div>
+			{% endif %}
+		</div>
+	</header>
+
+	<div class="intro">
+		<div class="text-intro">
+			Pour noël,Le cadeau immanquable ! 🎄🎁</br>
+			Vous êtes dans l'attente de votre chiot ? 🐶</br>
+			Ces petites boules de poils n'attendent alors plus que vous ! </br>
+			En attendant, Vous pouvez les suivre ci-dessous. 👇
+		</div>
+	</div>
+
+<section class="transition">
+
+ {% for upload in allUpload %}
+<section class="Upload">
+<div class="newContent" data-aos="fade-up" data-aos-anchor-placement="center-center">
+	{% if app.user %}
+	<div class="delete">
+	 	<form method="post" action="{{ path('accueil_delete', {'id': upload.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    		<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ upload.id) }}">
+    		<button class="buttonDelete">Supprimer</button>
+		</form>
+	</div>
+	{% endif %}
+		<div class="firstPartContent">
+			<div class="imgContent">
+				<img src="{{ asset('uploads/brochures/' ~ upload.imageFilename) }}" alt="{{ upload.imageFilename }}">
+				<div class="titleContent">
+					<h1> {{ upload.title }} </h1>
+				</div>
+			</div>
+		</div>
+		<div class="secondPartContent">
+			<div class="textContent">
+				<p> {{ upload.description }} </p>
+			</div>
+		</div>
+</div>
+</section>
+{% endfor %} 
+{# 
+	<div class="grid-container">
+		<div class="grid">
+			<div class="gridImg" data-aos="fade-up" data-aos-anchor-placement="center-center" data-aos-offset="-100">
+				<img class='grid-item grid-item-1' src="/build/images/chiot.jpg" alt=''>
+			</div>
+			<div class="gridImg" data-aos="fade-up" data-aos-anchor-placement="center-center" data-aos-offset="-100">
+				<img class='grid-item grid-item-2' src='/build/images/Chiots.jpg' alt=''>
+			</div>
+			<div class="gridImg" data-aos="fade-up" data-aos-anchor-placement="center-center" data-aos-offset="-100">
+				<img class='grid-item grid-item-3' src='/build/images/chiot2.jpg' alt=''>
+			</div>
+		</div>
+		<div class="grid">
+			<div class="gridImg" data-aos="fade-up" data-aos-anchor-placement="center-center" data-aos-offset="-200">
+				<img class='grid-item grid-item-4' src='/build/images/chiot3.jpg' alt=''>
+			</div>
+			<div class="gridImg" data-aos="fade-up" data-aos-anchor-placement="center-center" data-aos-offset="-200">
+				<img class='grid-item grid-item-5' src='/build/images/Chien_chiots.jpg' alt=''>
+			</div>
+			<div class="gridImg" data-aos="fade-up" data-aos-anchor-placement="center-center" data-aos-offset="-200">
+				<img class='grid-item grid-item-6' src='/build/images/chiot4.jpg' alt=''>
+			</div>
+		</div>
+		<div class="grid">
+			<div class="gridImg" data-aos="fade-up" data-aos-anchor-placement="center-center" data-aos-offset="-300">
+				<img class='grid-item grid-item-7' src='/build/images/chiot5.jpg' alt=''>
+			</div>
+		</div>
+	</div> #}
+</section>
+
+<section class="text">
+	<div class="description">
+		<h1>A propos des chiots :</h1></br>
+		<div class="white">
+			<p>Ces chiots sont à vendre et disponibles dès maintenant,</br>
+			sur le secteur de Decize et ses alentours.</br>
+			Dans le cadre de noël, si vous souhaitez créer la surprise,</br>
+			vous pouvez obtenir un bracelet avec un QR code renvoyant sur le site,</br>
+			De quoi proposer une belle surprise au pied du sapin pour la personne de votre choix !</br>
+			Au total 8 chiots attendent leurs nouveaux maîtres,</br>
+			Vous êtes intéressé et voulez plus d'informations ?</br>
+			Vous pouvez me contacter grâce au bouton juste en dessous 👇</p>
+			<div class="buttonBn3">
+				<a id="ancre" href="#target"><button class="bn3">Me contacter</button></a>
+			</div>
+			<div id="target" class="modal">
+				{% for message in app.flashes('success') %}
+					<div class="alert-success">
+						{{ message }}
+					</div>
+				{% endfor %}
+				<div id="contactForm" class="mt-4">
+				<a href="/" class="modalClose">&times;</a>
+					{{ form_start(form)}}
+						<div class="row">
+							<div class="feedback-input"> {{ form_row(form.prenom) }}</div>
+							<div class="feedback-input"> {{ form_row(form.nom) }}</div>
+							<div class="feedback-input"> {{ form_row(form.telephone) }}</div>
+							<div class="feedback-input"> {{ form_row(form.email) }}</div>
+							<div class="feedback-input"> {{ form_row(form.message) }}</div>
+						</div>
+								<div class="send">
+									<a href="/"><button class="feedback-input-send">Envoyer</button></a>
+								</div>
+					{{ form_end(form)}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="transition2">
+		<div class="video">
+			<iframe src="https://player.vimeo.com/video/656774003?h=710ddcedf8&amp;autopause=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+		</div>
+	</div>	
+</section>
+{% endblock %}
+{% block javascript %}{% endblock %}
+
+

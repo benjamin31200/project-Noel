@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	{% if error %}
+		<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+	{% endif %}
+	<a href="/" class="modalCloseLoging">&times;</a>
+	<section class="login">
+		<div class="container">
+			<div class="h1Login">
+				<div class="loginTitle">Connexion
+				</div>
+				<div class="inputs">
+					<form class="formLogin" action="{{ path('login') }}" method="post">
+						<label class="loginLabel" for="username">Email:</label>
+						<input class="loginInput" id="username" type="text" name="_username" value="{{ last_username }}"/>
+						<label class="loginLabel" for="password">Password:</label>
+						<input class="loginInput" id="password" type="password" name="_password"/>
+						<input type="hidden" name="_target_path" value="/"/>
+						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+						<button class="loginButton" type="submit">login</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
