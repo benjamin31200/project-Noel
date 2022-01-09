@@ -34,17 +34,17 @@
 
  {% for upload in allUpload %}
 <section class="Upload">
-<div class="newContent" data-aos="fade-up" data-aos-anchor-placement="center-center">
+<div class="newContent">
 	{% if app.user %}
 	<div class="delete">
 	 	<form method="post" action="{{ path('accueil_delete', {'id': upload.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
     		<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ upload.id) }}">
-    		<button class="buttonDelete">Supprimer</button>
+    		<button class="buttonDelete" data-aos="fade-up" data-aos-anchor-placement="center-center" data-aos-offset="-100">Supprimer</button>
 		</form>
 	</div>
 	{% endif %}
 		<div class="firstPartContent">
-			<div class="imgContent">
+			<div class="imgContent" data-aos="fade-up" data-aos-anchor-placement="center-center" data-aos-offset="-300">
 				<img src="{{ asset('uploads/brochures/' ~ upload.imageFilename) }}" alt="{{ upload.imageFilename }}">
 				<div class="titleContent">
 					<h1> {{ upload.title }} </h1>
@@ -52,7 +52,7 @@
 			</div>
 		</div>
 		<div class="secondPartContent">
-			<div class="textContent">
+			<div class="textContent" data-aos="fade-up" data-aos-anchor-placement="center-center" data-aos-offset="-300">
 				<p> {{ upload.description }} </p>
 			</div>
 		</div>
